@@ -48,4 +48,3 @@ scp marioabreu@localhost:/tmp/mabreu.txt .
 2. git clone git@github.com:jmmastey/level_up_exercises.git
 
 3. Did this currently on just_git branch.
-
