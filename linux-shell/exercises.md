@@ -2,7 +2,7 @@
 ## Getting Around the Filesystem: Absolute and Relative Paths
 
 1. Absolute path is used when we want to refer to some directory by specifying the path from the root (/), for instance '/usr/bin/bash' or '/Users/Some_user/Desktop/'. 
-The relative path is the path we refer from the current directory we are located at, for instance 'cd some_folder/example/' is for change directory to the sub directory some_folder/example/ . 
+The relative path is the path we refer from the current directory we are located at, for instance 'cd some_folder/example/' changes directory to the sub directory some_folder/example/ . 
 
 2. Navegating to my home directory (~) i reached '/Users/marioabreu' 
 
@@ -32,5 +32,12 @@ The environment variable was not defined, so i used 'export EDITOR=vim' to defin
 2. echo $PATH
 
 3. which ruby
+
+## Transferring Files Between Boxes
+
+1. scp mabreu.txt marioabreu@localhost:/tmp 
+
+2. rm mabreu.txt
+scp marioabreu@localhost:/tmp/mabreu.txt .
 
 
