@@ -41,3 +41,11 @@ The environment variable was not defined, so I used 'export EDITOR=vim' to defin
 scp marioabreu@localhost:/tmp/mabreu.txt .
 
 
+## Git. Just Git.
+
+1. done.
+
+2. git clone git@github.com:jmmastey/level_up_exercises.git
+
+3. Did this currently on just_git branch.
+
