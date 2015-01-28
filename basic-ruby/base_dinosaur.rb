@@ -1,19 +1,17 @@
-require 'csv'
-
 class BaseDinosaur
+  attr_reader :name, :period, :weight, :walking
 
-attr_accessor :name, :period, :diet, :weight, :walking  
-
-  def initialize(name="", period="", diet="", weight="", walking="")
+  def initialize(name: "", period: "", weight: "", walking: "")
     @name = name
     @period = period
-    @diet = diet
     @weight = weight
     @walking = walking
   end
 
-  def read(file)
-    CSV.read(file)
+  def to_s
+    "Name: #{name}\n" +
+    "Period: #{period}\n" +
+    "Weight: #{weight}\n" +
+    "Walking: #{walking}\n"
   end
-
 end
