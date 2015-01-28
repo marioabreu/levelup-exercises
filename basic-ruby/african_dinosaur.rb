@@ -8,8 +8,13 @@ class AfricanDinosaur < BaseDinosaur
     @carnivore = carnivore
   end
 
+  def carnivore?
+    carnivore == "Yes"
+  end
+
   def to_s
     super +
     "Carnivore: #{carnivore}\n\n"
   end
+
 end

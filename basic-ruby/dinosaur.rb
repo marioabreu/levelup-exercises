@@ -10,10 +10,15 @@ class Dinosaur < BaseDinosaur
     @description = description
   end
 
+  def carnivore?
+    ["Carnivore", "Piscivore", "Insectivore"].include? diet
+  end
+
   def to_s
     super +
     "Diet: #{diet}\n" +
     "Continent: #{continent}\n" +
     "Description: #{description}\n\n"
   end
+
 end
