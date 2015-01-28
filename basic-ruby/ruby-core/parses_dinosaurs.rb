@@ -1,16 +1,22 @@
 require 'csv'
+require 'json'
 require_relative 'dinosaur'
 require_relative 'african_dinosaur'
 
-class ParsesDinasours
+class ParsesDinosaurs < BaseDinosaur
   def initialize(files)
     @files = files
   end
+
 
   def parse
     files.flat_map do |file|
       parse_single_file(file)
     end
+  end
+
+  def to_json
+    
   end
 
   private
