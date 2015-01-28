@@ -104,7 +104,7 @@ scp marioabreu@localhost:/tmp/mabreu.txt .
 
 1. The user makes a request to access a webpage, DNS translate the Domain name into a IP Address. The server responds to the request.
 
-2. After the the client request (browser) the browser ask's a DNS Server to resolve de Domain Name into a IP. After that, the request passes for a ASM (application security manager) that determinates if the request is on the whitelist. If it is, then is send to a balance loader (nginx instance) to determinate which web to use. 
+2. After the the client request (browser) the browser ask's a DNS Server to resolve de Domain Name into a IP. After that, the request passes for a ASM (application security manager) that determinates if the request is on the whitelist. If it is, then is send to a balance loader witch will send it to one of our web node. Our Web node has a nginx web server that receives the requestes and send it to one of our multiple puma webservers.
  
 
 ## Managing Server Time (NTP)
