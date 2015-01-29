@@ -1,0 +1,3 @@
+class NameCollisionError < RuntimeError
+
+end
