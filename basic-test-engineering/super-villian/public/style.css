@@ -1,0 +1,9 @@
+.flash-error{
+  color: red;
+  font-size: 16;
+}
+
+.flash-notice{
+  color: green;
+  font-size: 16;
+}

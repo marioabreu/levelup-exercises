@@ -1,15 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Let's blow up this sh*it!</title>
-  <form action="wire", method="post">
-    <input type="text" name="code">
-    <input type="submit" name = cenas>
+<% if flash[:notice] %>
+  <p class="flash-notice"> <%= flash[:notice] %> </p>
+<% end %>
 
-  </form>
-</head>
-<body>
-  
-</body>
-</html>
+<% if flash[:error] %>
+  <p class="flash-error"> <%= flash[:error] %></p>
+<% end %>
+
+<form action="wire", method="post">
+  <label> Activation code: </label>
+  <input type="text" name="activation_code">
+
+  <input type="submit" value="Activate">
+</form>
+<br>
+
+<form action="disarm" method="post">
+    <label> Deactivation code: </label>
+    <input type="text" name="deactivation_code">
+
+    <input type="submit" value="Deactivate">
+</form>

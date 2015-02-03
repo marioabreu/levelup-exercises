@@ -1,9 +1,26 @@
+<% if flash[:error] %>
+  <p class="flash-error"><%= flash[:error] %></p>
+<% end %>
+<% if flash[:notice] %>
+  <p class="flash-notice"><%= flash[:notice] %></p>
+<% end %>
+
 <h1>Hi there!</h1>
 
 <form action="/bomb", method="post">
-  <p>Bomb activated: <%= @bomb.activated %>!</p>
-  <p>Activate the bomb:
-    <input type="text" name="code"> 
-    <input type="submit">
+
+<p>Atual activation code: <%= @bomb.activation_code%></p>
+<p>Atual deactivation code: <%= @bomb.deactivation_code%></p>
+
+<p>Wired: <%= @bomb.activated%></p>
+  <p>
+    <label for="">Activation code:</label>
+    <input type="text" name="activation_code"> 
+
+    <label for="">Deactivation code:</label>
+    <input type="text" name="deactivation_code"> 
+
+    <input type="submit" value="send">
   </p>
+
 </form>
