@@ -9,16 +9,16 @@
 
 <form action="/bomb", method="post">
 
-<p>Atual activation code: <%= @bomb.activation_code%></p>
-<p>Atual deactivation code: <%= @bomb.deactivation_code%></p>
+<p>Actual activation code: <%= @bomb.activation_code%></p>
+<p>Actual deactivation code: <%= @bomb.deactivation_code%></p>
 
 <p>Wired: <%= @bomb.activated%></p>
   <p>
     <label for="">Activation code:</label>
-    <input type="text" name="activation_code"> 
+    <input type="text" name="activation_code">
 
     <label for="">Deactivation code:</label>
-    <input type="text" name="deactivation_code"> 
+    <input type="text" name="deactivation_code">
 
     <input type="submit" value="send">
   </p>

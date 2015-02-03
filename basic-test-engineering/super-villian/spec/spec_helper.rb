@@ -4,6 +4,7 @@ $LOAD_PATH << File.expand_path('../..', __FILE__)
 require 'overlord'
 require 'capybara/rspec'
 require 'capybara/webkit'
+require 'pry'
 
 Dir[File.join(File.expand_path('.'), 'spec/support/**/*.rb')].each { |f| require f }
 

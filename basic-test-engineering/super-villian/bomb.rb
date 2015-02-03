@@ -1,16 +1,19 @@
 class Bomb
-
   attr_reader :activated, :activation_code, :deactivation_code
 
   def initialize
     reset
   end
 
-  def set_activation_code(code)
+  def activation_code=(code)
+    return if code.empty?
+
     @activation_code = code
   end
 
-  def set_deactivation_code(code)
+  def deactivation_code=(code)
+    return if code.empty?
+
     @deactivation_code = code
   end
 
@@ -39,5 +42,4 @@ class Bomb
   def disarm
     @activated = false
   end
-
 end

@@ -8,10 +8,12 @@ require_relative 'bomb'
 enable :sessions
 use Rack::Flash
 
+NUMERIC = /\A[-+]?[0-9]+\z/
 
-IS_NUMERIC = /\A[-+]?[0-9]+\z/
-
-bomb = Bomb.new
+INSTANCE = Bomb.new
+def bomb
+  INSTANCE
+end
 
 get '/' do
   erb :index
@@ -24,14 +26,20 @@ end
 
 post '/bomb' do
   @bomb = bomb
-  if ( params[:activation_code] =~ IS_NUMERIC ) != 0 || ( params[:deactivation_code] =~ IS_NUMERIC ) != 0
-    flash[:error] = "Activation and Deactivatoin code must be numeric"
-  else    
-    bomb.set_activation_code(params[:activation_code])
-    bomb.set_deactivation_code(params[:deactivation_code])
+  if invalid_code?(params[:activation_code]) || invalid_code?(params[:deactivation_code])
+    flash[:error] = "Activation and Deactivation code must be numeric"
+  else
+    bomb.activation_code = params[:activation_code]
+    bomb.deactivation_code = params[:deactivation_code]
     flash[:notice] = "The code configured was " + bomb.activation_code + " and the deactivation code is " + bomb.deactivation_code
   end
-  erb :bomb
+  redirect '/bomb'
+end
+
+def invalid_code?(code)
+  return false if code.empty?
+
+  code !~ NUMERIC
 end
 
 get '/wire' do

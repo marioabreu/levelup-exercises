@@ -13,14 +13,6 @@ feature 'User configures bomb', type: :feature do
     click_on('send')
     expect(page).to have_content("The code configured was 1234 and the deactivation code is 0000")
   end
-
-  scenario 'but does not provide eather the activation or deactivation code' do
-    visit '/bomb'
-
-    click_on('send')
-    expect(page).to have_content("Activation and Deactivatoin code must be numeric")
-  end  
-
 end
 
 feature 'User first boots' do
@@ -31,12 +23,11 @@ feature 'User first boots' do
   end
 end
 
-
 feature 'User tries to wire the bomb' do
-  
+
   scenario 'by entering the wrong activation code.' do
     visit '/bomb'
-    
+
     fill_in('activation_code', :with => '1111')
     fill_in('deactivation_code', :with => '9000')
     click_on('send')
@@ -50,7 +41,7 @@ feature 'User tries to wire the bomb' do
 
   scenario 'by entering the right activation code.' do
     visit '/bomb'
-    
+
     fill_in('activation_code', :with => '1111')
     fill_in('deactivation_code', :with => '9000')
     click_on('send')
@@ -68,10 +59,11 @@ feature 'User tries to wire the bomb' do
     fill_in('activation_code', :with => '1111')
     fill_in('deactivation_code', :with => '9000')
     click_on('send')
-    fill_in('activated_code', :with => '1111')
-    click_on('Activate_code', :with => 'The bomb is already wired!')
+
+    visit '/wire'
+    fill_in('activation_code', :with => '1111')
+    click_on('Activate')
+
+    expect(page).to have_text 'The bomb is already wired!'
   end
-
-  
-
 end

@@ -1,9 +1,8 @@
 # A sample Gemfile
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-ruby "2.1.5"
-
-gem "sinatra"
-gem "rspec"
-gem "capybara-webkit"
-gem "rack-flash3"
+gem 'capybara-webkit'
+gem 'pry'
+gem 'rack-flash3'
+gem 'rspec'
+gem 'sinatra'
