@@ -1,0 +1,9 @@
+<h1><%= @meeting.title %></h1>
+
+<p>Begins: <%= @meeting.begins %></p>
+<p>Ends: <%= @meeting.ends %></p>
+<p>User: <%= @meeting.user_id %></p>
+<p>Room: <%= @meeting.room_id %></p>
+
+<p><%= link_to 'Edit meeting', edit_meeting_path(@meeting) %></p>
+<p><%= link_to 'Delete meeting', meeting_path(@meeting), method: :delete %></p>

@@ -1,0 +1,27 @@
+<% @meeting.errors.full_messages.each do |message| %>
+  <p class="error"><%= message %>
+<% end %>
+
+<%= form_for :meeting, url: meeting_path(@meeting), method: :patch do |f|%>
+<p>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</p>  
+
+<p>
+  <%= f.label :begins %>
+  <%= f.date_select :begins%>
+  <%= f.time_select :begins, ignore_date: true %>
+</p>
+
+<p>
+  <%= f.label :ends %>
+  <%= f.date_select :ends%>
+  <%= f.time_select :ends, ignore_date: true %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+  
+<% end %>
+
