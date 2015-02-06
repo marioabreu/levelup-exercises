@@ -1,59 +1,71 @@
-#account-menu{
-  position: relative;
+a {
+  color: #DF4A32 !important;
 }
 
-#account-menu img{
-  max-width: 100%;
-  height: 100px; 
-  border-radius: 50%;
-  padding: 10px 0 10px 0;
+table{
+  width: 60%;
+  text-align: center;
+  float: left;  
+}
+
+thead{
+  font-weight: 600;
+}
+
+ul{
+  padding:0;
+  list-style: none;
+}
+
+.header {
+  width: 100%;
+  float: left;
+  vertical-align: bottom;
 }
 
 #logo{
-  background-image: url('./images/logo.jpg');
-  background-repeat: no-repeat;
-  max-width: auto;
-  height: 100px;
+  width: 20%;
+  margin:0;
+  position: relative;
+  left:0;
 }
 
-#logo:hover{
+#logo img{
+  max-width: auto;
+  height: 70px;
+}
 
+.search-box{
+  margin-top: 20px;
+  position: relative;
+  display: inline;
+  padding: 0 20px 0 20px;
+
+}
+
+.input-search{
+  width: 80%;
+}
+
+.input-searh-button{
+  right: 0;
+  width: 18%;
+}
+
+.right-options{
+  padding: 15px 0 15px 0;
+}
+
+.right-options button{
+  border: none;
+  color: #E14929;
 }
 
 #sidebar{
-  padding: 20px;
-}
-
-.user-wrapper{
-  float:right;
-}
-
-#dropdown-menu{
-  padding:0 20px 0 20px;
-  float:right;
-  width: 150px;
-  position: relative;
-  font-size: 18px;
-  list-style: none;
-  padding: 5px 0 5px 0;
-}
-
-#dropdown-menu li{
-  width: 100px;
+  width: 15%;
+  height: 600px;
+  padding: 0 20px;
   float: left;
-
-  position: relative;
-  padding: 0px;
-  border:none;
-}
-
-#dropdown-menu li:hover{
-  border-bottom: 1px solid
-  
-}
-
-.show{
-  visibility: hidden;
 }
 
 #navigation-left-side{
@@ -61,7 +73,46 @@
   padding: 10px 0 0 0;
 }
 
-ul{
-  padding:0;
-  list-style: none;
+.user-wrapper{
+  width: 20%;
+  float:right;
+  text-align:center;
 }
+
+#dropdown-menu{
+  padding:0 20px 0 20px;
+  width: 150px;
+  position: relative;
+  list-style: none;
+  padding: 5px 0 5px 0;
+
+}
+
+#dropdown-menu li{
+  width: 100px;
+  position: relative;
+  padding: 0px;
+  border:none;
+}
+
+#dropdown-menu img{
+  max-width: 100%;
+  height: 100px; 
+  border-radius: 50%;
+  padding: 10px 0 10px 0;
+  float:inherit;
+}
+
+#dropdown-menu li ul{
+  visibility: hidden;
+}
+
+#dropdown-menu li:hover ul{
+  visibility: visible;
+}
+
+.show{
+  display: block
+}
+
+
