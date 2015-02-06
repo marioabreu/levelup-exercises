@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :meetings
+  include Clearance::User
 
-  validates :name, presence: true, uniqueness: true
+  has_many :meetings
 end

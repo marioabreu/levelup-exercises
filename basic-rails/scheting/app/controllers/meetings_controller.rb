@@ -1,4 +1,7 @@
 class MeetingsController < ApplicationController
+  authorize_resource
+  skip_authorize_resource only: [:edit]
+
   def index
     @meetings = Meeting.by_date
   end
@@ -13,10 +16,11 @@ class MeetingsController < ApplicationController
 
   def edit
     @meeting = Meeting.find(params[:id])
+    authorize! :edit, @meeting
   end
 
   def create
-    @meeting = Meeting.new(meeting_params)
+    @meeting = current_user.meetings.build(meeting_params)
 
     if @meeting.save
       redirect_to @meeting, notice: "Successfully created!"
@@ -43,6 +47,6 @@ class MeetingsController < ApplicationController
   private
 
   def meeting_params
-    params.require(:meeting).permit(:title, :begins, :ends, :user_id, :room_id)
+    params.require(:meeting).permit(:title, :begins, :ends, :room_id)
   end
 end

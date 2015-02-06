@@ -1,0 +1,22 @@
+p = link_to 'New meeting', new_meeting_path 
+
+- @rooms.each do |room|
+
+  h2 = room.name
+
+  h3 Meetings
+
+  table
+    tr
+      th Meeting
+      th Begins
+      th ends
+      - room.meetings.each do |meeting|
+        tr
+          td id="#{meeting.id}"
+            = link_to meeting.title, meeting_path(meeting)
+          td 
+            = l meeting.begins, format: :short
+          td 
+            = l meeting.ends, format: :short
+      
