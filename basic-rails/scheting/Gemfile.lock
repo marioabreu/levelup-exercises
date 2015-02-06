@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/zamith/formulaic.git
+  revision: 9b330ea7beace5f3a0befaca0970409652c8420e
+  specs:
+    formulaic (0.1.3)
+      activesupport
+      capybara
+      i18n
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -183,6 +192,7 @@ DEPENDENCIES
   capybara
   capybara-webkit
   coffee-rails (~> 4.1.0)
+  formulaic!
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.0)

@@ -46,6 +46,7 @@ end
 group :test do
   gem 'capybara'
   gem 'capybara-webkit'
+  gem 'formulaic', github: 'zamith/formulaic'
   gem 'rspec-rails'
 end
 

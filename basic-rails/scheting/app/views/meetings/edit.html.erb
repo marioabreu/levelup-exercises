@@ -1,5 +1,7 @@
 <h1>Editing Meeting</h1>
 
-<%= render 'form' %>
+<%= form_for :meeting, url: meeting_path(@meeting), method: :patch do |f|%>
+  <%= render 'form', meeting: @meeting, f: f %>
+<% end %>
 
 <%= link_to 'Back', meeting_path(@meeting) %>

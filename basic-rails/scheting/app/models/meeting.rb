@@ -1,9 +1,9 @@
 require 'date'
 
-MEETING_MAXIMUM_DURATION = 7200
-MEETING_MINIMUM_DURATION = 600
-
 class Meeting < ActiveRecord::Base
+  MEETING_MAXIMUM_DURATION = 7200
+  MEETING_MINIMUM_DURATION = 600
+
   belongs_to :user
   belongs_to :room
 
@@ -13,7 +13,6 @@ class Meeting < ActiveRecord::Base
   validates :title, :begins, :ends, :user_id, :room_id , presence: true
 
   scope :between_dates, -> (begin_date, end_date) { where("(begins between ? and ?) or (ends between ? and ?)", begin_date, end_date, begin_date, end_date) }
-  #scope :by_date, -> { order(:begins) }
 
   def self.by_date
     order(:begins)
@@ -42,7 +41,4 @@ class Meeting < ActiveRecord::Base
       errors.add(:base, "The room is occupied for that period")
     end
   end
-
-
-
 end

@@ -1,5 +1,4 @@
 class MeetingsController < ApplicationController
-
   def index
     @meetings = Meeting.by_date
   end
@@ -18,10 +17,9 @@ class MeetingsController < ApplicationController
 
   def create
     @meeting = Meeting.new(meeting_params)
-    
+
     if @meeting.save
-      flash[:notice] = "Successfully created!"
-      redirect_to @meeting
+      redirect_to @meeting, notice: "Successfully created!"
     else
       render 'new'
     end
@@ -31,25 +29,20 @@ class MeetingsController < ApplicationController
     @meeting = Meeting.find(params[:id])
 
     if @meeting.update(meeting_params)
-      redirect_to @meeting
+      redirect_to @meeting, notice: 'Edited!'
     else
       render 'edit'
     end
-
   end
 
   def destroy
-    @meeting = Meeting.find(params[:id])
-    @meeting.destroy
+    Meeting.find(params[:id]).destroy
     redirect_to rooms_path
   end
 
   private
 
-
   def meeting_params
-    params.require(:meeting).permit(:title, :begins, :ends, :user_id, :room_id )
+    params.require(:meeting).permit(:title, :begins, :ends, :user_id, :room_id)
   end
-
-  
 end

@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def index
     @users = User.all
   end
@@ -27,13 +26,13 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
 
     if @user.update(user_params)
       redirect_to @user
     else
       render 'edit'
     end
-
   end
 
   def destroy
@@ -42,9 +41,7 @@ class UsersController < ApplicationController
 
   private
 
-
   def user_params
     params.require(:user).permit(:name)
   end
-
 end

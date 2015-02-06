@@ -1,12 +1,11 @@
-<% @meeting.errors.full_messages.each do |message| %>
+<% meeting.errors.full_messages.each do |message| %>
   <p class="error"><%= message %>
 <% end %>
 
-<%= form_for :meeting, url: meeting_path(@meeting), method: :patch do |f|%>
 <p>
   <%= f.label :title %>
   <%= f.text_field :title %>
-</p>  
+</p>
 
 <p>
   <%= f.label :begins %>
@@ -20,8 +19,14 @@
   <%= f.time_select :ends, ignore_date: true %>
 </p>
 <p>
+  <%= f.label :user_id %>
+  <%= f.select :user_id, options_for_select( User.all.map { |user| [user.name, user.id] }) %>
+</p>
+<p>
+  <%= f.label :room_id %>
+  <%= f.select :room_id, options_for_select( Room.all.map { |room| [room.name, room.id] }) %>
+</p>
+<p>
   <%= f.submit %>
 </p>
-  
-<% end %>
 
