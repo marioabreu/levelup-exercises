@@ -1,8 +1,9 @@
 $(document).ready(function() {     
-    $('#user-logo').hover(function(){     
-        $('#dropdown-menu').removeClass('');    
-    },
-    function(){    
-        $('#dropdown-menu').addClass('');     
+    $('#user-logo').on('mouseover', function(){ 
+      $('.user-wrapper .menu').show();    
+    });
+
+    $(document).on('click', function() {
+      $('.user-wrapper .menu').hide();
     });
 }); 

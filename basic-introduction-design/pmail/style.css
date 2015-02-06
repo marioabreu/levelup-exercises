@@ -8,6 +8,10 @@ table{
   float: left;  
 }
 
+table td, tr, th{
+  padding: 3px;
+} 
+
 thead{
   font-weight: 600;
 }
@@ -78,41 +82,42 @@ ul{
   float:right;
   text-align:center;
 }
+.user-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: 100px; 
+  border-radius: 50%;
+  padding: 10px 0 10px 0;
+}
 
-#dropdown-menu{
+.menu{
   padding:0 20px 0 20px;
   width: 150px;
   position: relative;
   list-style: none;
   padding: 5px 0 5px 0;
-
+  display: none;
 }
 
-#dropdown-menu li{
+.menu li{
   width: 100px;
   position: relative;
   padding: 0px;
   border:none;
 }
 
-#dropdown-menu img{
-  max-width: 100%;
-  height: 100px; 
-  border-radius: 50%;
-  padding: 10px 0 10px 0;
-  float:inherit;
+
+
+.visible{
+  display: block;
 }
 
-#dropdown-menu li ul{
-  visibility: hidden;
-}
-
-#dropdown-menu li:hover ul{
+/*#dropdown-menu li:hover ul{
   visibility: visible;
-}
+}*/
 
 .show{
-  display: block
+  visibility: visible;
 }
 
 
